@@ -26,3 +26,4 @@ C:\Ann\Scripts\OnlineStore\obj\Debug\net7.0\OnlineStore.genruntimeconfig.cache
 C:\Ann\Scripts\OnlineStore\obj\Debug\net7.0\ref\OnlineStore.dll
 C:\Ann\Scripts\OnlineStore\obj\Debug\net7.0\OnlineStore.RazorAssemblyInfo.cache
 C:\Ann\Scripts\OnlineStore\obj\Debug\net7.0\OnlineStore.RazorAssemblyInfo.cs
+C:\Ann\Scripts\OnlineStore\bin\Debug\net7.0\OnlineStore.staticwebassets.runtime.json
