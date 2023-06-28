@@ -18,7 +18,9 @@ namespace OnlineStore.Data.Mocks
                 return new List<Good>() { new Good() {Category = CategoryGoods.AllCategories.First()} };
             }
         }
-        public IEnumerable<Good> AllFavouriteGoods { get; set; }
+        public IEnumerable<Good> AllFavouriteGoods { get{
+            return new List<Good>(){};
+        } set{} }
 
         public Good GetGood(int id)
         {

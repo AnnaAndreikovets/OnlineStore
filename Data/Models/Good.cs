@@ -12,7 +12,7 @@ namespace OnlineStore.Data.Models
         public ushort Price { get; set; }
         public string LongDescription { get; set; } = null!;
         public string ShortDescription { get; set; } = null!;
-        public List<string> Images { get; set; } = null!;
+        public string Images { get; set; } = null!;
         public bool IsFavourite { get; set; }
         public bool Availible { get; set; }
         public int CategoryId { get; set; }

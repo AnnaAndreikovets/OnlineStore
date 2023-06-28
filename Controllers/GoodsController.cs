@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Data.Interfaces;
+using OnlineStore.ViewModels;
 
 namespace OnlineStore.Controllers
 {
@@ -21,8 +22,11 @@ namespace OnlineStore.Controllers
 
         public ViewResult List()
         {
-            var good = AllGoods.AllGoods;
-            return View(AllGoods.AllGoods);
+            ViewBag.Title = "Page with goods";
+            GoodsListViewModel obj = new GoodsListViewModel();
+            obj.AllGoods = AllGoods.AllGoods;
+            obj.CurrentCategory = "All goods";
+            return View(obj);
         }
 
     }

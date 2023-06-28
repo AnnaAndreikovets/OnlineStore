@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<h2>@Model.CurrentCategory</h2>
+  @{
+  foreach(var good in Model.AllGoods)
+    {
+      <div>
+        <h2>Товар: @good.Name</h2>
+        <p>Цена: @good.Price.ToString("c")</p>
+      </div>
+    }
+  }
