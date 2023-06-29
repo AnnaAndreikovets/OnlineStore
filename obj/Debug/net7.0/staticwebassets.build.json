@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Z2HHbHW01E7HsvgIHkIOmO53+dnRRk2znAQaqo40T1s=",
+  "Hash": "amq4kqZM0E6H6QehhTbnW8pYwXMw7ZXTbAYBndb/KtY=",
   "Source": "OnlineStore",
   "BasePath": "_content/OnlineStore",
   "Mode": "Default",
@@ -32,6 +32,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\css\\style.css",
+      "SourceId": "OnlineStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\",
+      "BasePath": "_content/OnlineStore",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\bag ball.jpg",
@@ -66,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\black hoodie.jpg"
+    },
+    {
+      "Identity": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\Drawstring Kangaroo Pocket Thermal Lined Hoodie.jpg",
+      "SourceId": "OnlineStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\",
+      "BasePath": "_content/OnlineStore",
+      "RelativePath": "img/Drawstring Kangaroo Pocket Thermal Lined Hoodie.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Drawstring Kangaroo Pocket Thermal Lined Hoodie.jpg"
     },
     {
       "Identity": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\green hoodie.jpg",
@@ -202,23 +236,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\teapot.jpg"
-    },
-    {
-      "Identity": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\yellow hoodie.jpg",
-      "SourceId": "OnlineStore",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\",
-      "BasePath": "_content/OnlineStore",
-      "RelativePath": "img/yellow hoodie.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\yellow hoodie.jpg"
     },
     {
       "Identity": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\yellow mug.jpg",

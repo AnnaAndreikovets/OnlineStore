@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\Drawstring Kangaroo Pocket Thermal Lined Hoodie.jpg",
+      "PackagePath": "staticwebassets\\img\\Drawstring Kangaroo Pocket Thermal Lined Hoodie.jpg"
+    },
+    {
       "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\bag ball.jpg",
       "PackagePath": "staticwebassets\\img\\bag ball.jpg"
     },
@@ -43,10 +51,6 @@
     {
       "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\teapot.jpg",
       "PackagePath": "staticwebassets\\img\\teapot.jpg"
-    },
-    {
-      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\yellow hoodie.jpg",
-      "PackagePath": "staticwebassets\\img\\yellow hoodie.jpg"
     },
     {
       "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\yellow mug.jpg",
