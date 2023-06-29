@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "amq4kqZM0E6H6QehhTbnW8pYwXMw7ZXTbAYBndb/KtY=",
+  "Hash": "k/ENi7NtCeEyEZpBSPsyLhvGNVbsw0+REm0wR5006is=",
   "Source": "OnlineStore",
   "BasePath": "_content/OnlineStore",
   "Mode": "Default",
@@ -83,23 +83,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\black hoodie.jpg"
-    },
-    {
-      "Identity": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\Drawstring Kangaroo Pocket Thermal Lined Hoodie.jpg",
-      "SourceId": "OnlineStore",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\",
-      "BasePath": "_content/OnlineStore",
-      "RelativePath": "img/Drawstring Kangaroo Pocket Thermal Lined Hoodie.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Drawstring Kangaroo Pocket Thermal Lined Hoodie.jpg"
     },
     {
       "Identity": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\green hoodie.jpg",
@@ -236,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\teapot.jpg"
+    },
+    {
+      "Identity": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\yellow hoodie_.jpg",
+      "SourceId": "OnlineStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\",
+      "BasePath": "_content/OnlineStore",
+      "RelativePath": "img/yellow hoodie_.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\yellow hoodie_.jpg"
     },
     {
       "Identity": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\yellow mug.jpg",

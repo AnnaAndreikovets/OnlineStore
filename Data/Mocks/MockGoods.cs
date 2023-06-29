@@ -140,11 +140,11 @@ namespace OnlineStore.Data.Mocks
                     new Good()
                     {
                         Id = Guid.NewGuid(),
-                        Name = "Yellow hoodie",
+                        Name = "Yellow hoodie_",
                         Price = 14,
                         LongDescription = "Thick fabric hoodie. Consists mainly of cotton. Beautiful colour.",
                         ShortDescription = "Cotton thick hoodie.",
-                        Image = "/img/yellow hoodie.jpg",
+                        Image = "/img/yellow hoodie_.jpg",
                         Availible = true,
                         CategoryId = CategoryGoods.AllCategories.FirstOrDefault(v => v.Name == "Clothes")!.Id,
                         Category = CategoryGoods.AllCategories.FirstOrDefault(v => v.Name == "Clothes")!
@@ -169,7 +169,7 @@ namespace OnlineStore.Data.Mocks
             return new List<Good>(){};
         } set{} }
 
-        public Good GetGood(int id)
+        public Good GetGood(Guid id)
         {
             throw new NotImplementedException();
         }

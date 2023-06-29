@@ -9,7 +9,7 @@ namespace OnlineStore.Data.Interfaces
     public interface IAllGoods
     {
         IEnumerable<Good> AllGoods { get; }
-        IEnumerable<Good> AllFavouriteGoods { get; set; }
-        Good GetGood (int id);
+        IEnumerable<Good> AllFavouriteGoods { get; }
+        Good GetGood (Guid id);
     }
 }
