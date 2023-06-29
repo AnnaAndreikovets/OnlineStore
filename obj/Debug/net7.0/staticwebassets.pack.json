@@ -5,6 +5,54 @@
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\bag ball.jpg",
+      "PackagePath": "staticwebassets\\img\\bag ball.jpg"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\black hoodie.jpg",
+      "PackagePath": "staticwebassets\\img\\black hoodie.jpg"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\green hoodie.jpg",
+      "PackagePath": "staticwebassets\\img\\green hoodie.jpg"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\long cat.jpg",
+      "PackagePath": "staticwebassets\\img\\long cat.jpg"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\mug with a snake.jpg",
+      "PackagePath": "staticwebassets\\img\\mug with a snake.jpg"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\pink bag.jpg",
+      "PackagePath": "staticwebassets\\img\\pink bag.jpg"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\pink hoodie.jpg",
+      "PackagePath": "staticwebassets\\img\\pink hoodie.jpg"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\purpule bag.jpg",
+      "PackagePath": "staticwebassets\\img\\purpule bag.jpg"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\small cat.jpg",
+      "PackagePath": "staticwebassets\\img\\small cat.jpg"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\teapot.jpg",
+      "PackagePath": "staticwebassets\\img\\teapot.jpg"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\yellow hoodie.jpg",
+      "PackagePath": "staticwebassets\\img\\yellow hoodie.jpg"
+    },
+    {
+      "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\img\\yellow mug.jpg",
+      "PackagePath": "staticwebassets\\img\\yellow mug.jpg"
+    },
+    {
       "Id": "C:\\Ann\\Scripts\\OnlineStore\\wwwroot\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
     },

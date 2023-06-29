@@ -15,7 +15,10 @@ namespace OnlineStore.Data.Mocks
             {
                 return new List<Category>()
                 {
-                    new Category() { Id = 1, Name = 2, Goods = null}
+                    new Category() { Id = Guid.NewGuid(), Name = "Toys"},
+                    new Category() { Id = Guid.NewGuid(), Name = "Clothes"},
+                    new Category() { Id = Guid.NewGuid(), Name = "Bags"},
+                    new Category() { Id = Guid.NewGuid(), Name = "Kitchen utensils"}
                 };
             }
         }
