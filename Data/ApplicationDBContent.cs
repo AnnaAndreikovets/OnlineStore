@@ -14,9 +14,8 @@ namespace OnlineStore.Data
 
         public ApplicationDBContent(DbContextOptions<ApplicationDBContent> options) : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
-
         
     }
 }
