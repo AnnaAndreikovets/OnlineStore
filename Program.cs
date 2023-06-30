@@ -3,6 +3,7 @@ using OnlineStore.Data.Models;
 using OnlineStore.Data.Repository;
 using OnlineStore.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,12 +19,17 @@ app.UseStaticFiles();
 app.UseMvc();
 app.UseMvcWithDefaultRoute();
 
+using(var scope = app.Services.CreateScope())
+{
+    ApplicationDBContent content = scope.ServiceProvider.GetRequiredService<ApplicationDBContent>()!;
+
+    DBobjects.Initial(content);
+}
+
 if(app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     app.UseStatusCodePages();
 }
-
-//app.MapGet("/", () => "Hello World!");
 
 app.Run();
