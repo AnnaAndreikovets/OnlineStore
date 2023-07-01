@@ -11,20 +11,20 @@ namespace OnlineStore.Controllers
 {
     public class GoodsController : Controller
     {
-        private readonly IAllGoods AllGoods = null!;
-        private readonly IGoodsCategory GoodsCategory = null!;
+        private readonly IAllGoods allGoods = null!;
+        private readonly IGoodsCategory goodsCategory = null!;
 
         public GoodsController(IAllGoods allGoods, IGoodsCategory goodsCategory)
         {
-            AllGoods = allGoods;
-            GoodsCategory = goodsCategory;
+            this.allGoods = allGoods;
+            this.goodsCategory = goodsCategory;
         }
 
         public ViewResult List()
         {
             ViewBag.Title = "Page with goods";
             GoodsListViewModel obj = new GoodsListViewModel();
-            obj.AllGoods = AllGoods.AllGoods;
+            obj.AllGoods = allGoods.AllGoods;
             obj.CurrentCategory = "All goods";
             return View(obj);
         }

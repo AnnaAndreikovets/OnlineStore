@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,11 @@ namespace OnlineStore.Data.Models
 {
     public class ShopCart
     {
-        readonly ApplicationDBContent ApplicationDBContent;
+        readonly ApplicationDBContent applicationDBContent;
 
         public ShopCart(ApplicationDBContent content)
         {
-            ApplicationDBContent = content;
+            applicationDBContent = content;
         }
 
         public string ShopCartId { get; set; }
@@ -32,9 +33,9 @@ namespace OnlineStore.Data.Models
             return new ShopCart(content){ ShopCartId = session.GetString("CartId")};
         }
 
-        public void AddtToCart(Good good, int amount)
+        public void AddToCart(Good good)
         {
-            ApplicationDBContent.ShopCartItem.Add(
+            applicationDBContent.ShopCartItem.Add(
                 new ShopCartItem()
                 {
                     Id = Guid.NewGuid(),
@@ -42,6 +43,13 @@ namespace OnlineStore.Data.Models
                     Price = good.Price,
                     ShopCartId = ShopCartId
                 });
+
+            applicationDBContent.SaveChanges();
+        }
+
+        public List<ShopCartItem> GetShopCartItems()
+        {
+            return applicationDBContent.ShopCartItem.Where(c => c.ShopCartId == ShopCartId).Include(c => c.Good).ToList();
         }
     }
 }

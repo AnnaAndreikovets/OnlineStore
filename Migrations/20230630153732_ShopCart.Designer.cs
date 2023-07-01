@@ -83,9 +83,9 @@ namespace OnlineStore.Migrations
 
             modelBuilder.Entity("OnlineStore.Data.Models.ShopCartItem", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("Guid");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
@@ -95,7 +95,7 @@ namespace OnlineStore.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<string>("ShortCartId")
+                    b.Property<string>("ShopCartId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

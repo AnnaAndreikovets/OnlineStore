@@ -15,11 +15,11 @@ namespace OnlineStore.Migrations
                 name: "ShopCartItem",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<Guid>(type: "Guid", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     GoodId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
-                    ShortCartId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ShopCartId = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
