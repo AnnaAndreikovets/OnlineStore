@@ -4,14 +4,9 @@
 <h2>@Model.CurrentCategory</h2>
 <div class="row mt-5 mb-2">
   @{
-    foreach(var good in Model.AllGoods)
+    foreach(Good good in Model.AllGoods)
     {
-      <div class="col-lg-4">
-        <img class="img-thumbnail" src="@good.Image" alt="@good.Name" />
-        <h2>@good.Name</h2>
-        <p>Price: @good.Price.ToString("c")</p>
-        <p><a class="btn btn-warning" href="#">More</a></p>
-      </div>
+      @Html.Partial("AllGoods.cshtml", good);
     }
   }
 </div>
