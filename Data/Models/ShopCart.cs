@@ -50,7 +50,14 @@ namespace OnlineStore.Data.Models
 
         public List<ShopCartItem> GetShopCartItems()
         {
-            return applicationDBContent.ShopCartItem.Where(c => c.ShopCartId == ShopCartId).Include(c => c.Good).ToList();
+            try 
+            {
+                return applicationDBContent.ShopCartItem?.Where(c => c.ShopCartId == ShopCartId)?.Include(c => c.Good).ToList();
+            }
+            catch
+            {
+                return new List<ShopCartItem>(){};
+            }
         }
     }
 }
