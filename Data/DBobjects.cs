@@ -22,7 +22,7 @@ namespace OnlineStore.Data
                         new Category() { Id = Guid.NewGuid(), Name = "Toys"},
                         new Category() { Id = Guid.NewGuid(), Name = "Clothes"},
                         new Category() { Id = Guid.NewGuid(), Name = "Bags"},
-                        new Category() { Id = Guid.NewGuid(), Name = "Kitchen utensils"}
+                        new Category() { Id = Guid.NewGuid(), Name = "KitchenUtensils"}
                     };
 
                     categories = new Dictionary<string, Category>();
@@ -105,8 +105,8 @@ namespace OnlineStore.Data
                         ShortDescription = "Handmade cup with beautiful design.",
                         Image = "/img/mug with a snake.jpg",
                         Availible = true,
-                        CategoryId = Categories["Kitchen utensils"].Id,
-                        Category = Categories["Kitchen utensils"]
+                        CategoryId = Categories["KitchenUtensils"].Id,
+                        Category = Categories["KitchenUtensils"]
                     },
                     new Good()
                     {
@@ -165,8 +165,9 @@ namespace OnlineStore.Data
                         ShortDescription = "Ceramic teapot in the form of a lemon.",
                         Image = "/img/teapot.jpg",
                         Availible = true,
-                        CategoryId = Categories["Kitchen utensils"].Id,
-                        Category = Categories["Kitchen utensils"]
+                        IsFavourite = true,
+                        CategoryId = Categories["KitchenUtensils"].Id,
+                        Category = Categories["KitchenUtensils"]
                     },
                     new Good()
                     {
@@ -177,6 +178,7 @@ namespace OnlineStore.Data
                         ShortDescription = "Cotton thick hoodie.",
                         Image = "/img/yellow hoodie_.jpg",
                         Availible = true,
+                        IsFavourite = true,
                         CategoryId = Categories["Clothes"].Id,
                         Category = Categories["Clothes"]
                     },
@@ -189,8 +191,9 @@ namespace OnlineStore.Data
                         ShortDescription = "Mug with black eye design.",
                         Image = "/img/yellow mug.jpg",
                         Availible = true,
-                        CategoryId = Categories["Kitchen utensils"].Id,
-                        Category = Categories["Kitchen utensils"]
+                        IsFavourite = true,
+                        CategoryId = Categories["KitchenUtensils"].Id,
+                        Category = Categories["KitchenUtensils"]
                     },
                 });
             }

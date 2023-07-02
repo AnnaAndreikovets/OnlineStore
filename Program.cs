@@ -28,7 +28,11 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseMvc();
 app.UseSession();
-app.UseMvcWithDefaultRoute();
+//app.UseMvcWithDefaultRoute();
+app.UseMvc(routes => {
+    routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+    routes.MapRoute(name: "categoryFilter", template: "Good/{action}/{category?}", defaults: new {controller = "Good", action = "List"});
+});
 
 using(var scope = app.Services.CreateScope())
 {
