@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using OnlineStore.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,11 +7,9 @@ namespace OnlineStore.Data
     {
         public DbSet<Good> Good { get; set; } = null!;
         public DbSet<Category> Category { get; set; } = null!;
-        public DbSet<ShopCartItem> ShopCartItem { get; set; }
 
         public ApplicationDBContent(DbContextOptions<ApplicationDBContent> options) : base(options)
         {
-            //Database.EnsureCreated();
         }
         
     }

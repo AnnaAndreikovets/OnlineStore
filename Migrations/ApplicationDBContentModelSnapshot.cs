@@ -78,31 +78,6 @@ namespace OnlineStore.Migrations
                     b.ToTable("Good");
                 });
 
-            modelBuilder.Entity("OnlineStore.Data.Models.ShopCartItem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("Guid");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<Guid>("GoodId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ShopCartId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GoodId");
-
-                    b.ToTable("ShopCartItem");
-                });
-
             modelBuilder.Entity("OnlineStore.Data.Models.Good", b =>
                 {
                     b.HasOne("OnlineStore.Data.Models.Category", "Category")
@@ -112,17 +87,6 @@ namespace OnlineStore.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("OnlineStore.Data.Models.ShopCartItem", b =>
-                {
-                    b.HasOne("OnlineStore.Data.Models.Good", "Good")
-                        .WithMany()
-                        .HasForeignKey("GoodId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Good");
                 });
 
             modelBuilder.Entity("OnlineStore.Data.Models.Category", b =>
