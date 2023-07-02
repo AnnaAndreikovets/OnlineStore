@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace OnlineStore.Data.Models
 {
@@ -22,7 +23,7 @@ namespace OnlineStore.Data.Models
 
         public static ShopCart GetCart(IServiceProvider service)
         {
-            ISession session = service.GetRequiredService<HttpContextAccessor>()?.HttpContext.Session;
+            ISession session = service.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
             var content = service.GetRequiredService<ApplicationDBContent>();
 
             if(string.IsNullOrEmpty(session.GetString("CartId")))

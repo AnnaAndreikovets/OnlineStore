@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDBContent>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpContextAccessor();//удалить
 
 builder.Services.AddTransient<IAllGoods, GoodRepository>();
 builder.Services.AddTransient<IGoodsCategory, CategoryRepository>();
