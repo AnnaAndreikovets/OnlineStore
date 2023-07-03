@@ -1,6 +1,7 @@
 using OnlineStore.Data.Interfaces;
 using OnlineStore.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 namespace OnlineStore.Data.Repository
 {
@@ -15,8 +16,9 @@ namespace OnlineStore.Data.Repository
 
         public IEnumerable<Good> AllGoods => DBContent.Good.Include(c => c.Category);
 
-        public IEnumerable<Good> AllFavouriteGoods => DBContent.Good.Where(c => c.IsFavourite).Include(c => c.Category);
+        public IEnumerable<Good> AllFavouriteGoods => DBContent.Good.Where(g => g.IsFavourite).Include(c => c.Category);
 
-        public Good GetGood(Guid id) => DBContent.Good.FirstOrDefault(c => c.Id == id);
+        public Good GetGood(Guid id) => DBContent.Good.FirstOrDefault(g => g.Id == id);
+
     }
 }

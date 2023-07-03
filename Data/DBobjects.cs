@@ -4,7 +4,7 @@ namespace OnlineStore.Data
 {
     public class DBobjects
     {
-        private static Dictionary<string, Category> categories;
+        private static Dictionary<string, Category> categories = null!;
         public static Dictionary<string, Category> Categories
         {
             get
@@ -16,7 +16,7 @@ namespace OnlineStore.Data
                         new Category() { Id = Guid.NewGuid(), Name = "Toys"},
                         new Category() { Id = Guid.NewGuid(), Name = "Clothes"},
                         new Category() { Id = Guid.NewGuid(), Name = "Bags"},
-                        new Category() { Id = Guid.NewGuid(), Name = "KitchenUtensils"}
+                        new Category() { Id = Guid.NewGuid(), Name = "hjgthfh"}
                     };
 
                     categories = new Dictionary<string, Category>();
@@ -166,7 +166,7 @@ namespace OnlineStore.Data
                     new Good()
                     {
                         Id = Guid.NewGuid(),
-                        Name = "Yellow hoodie_",
+                        Name = "Yellow hoodie",
                         Price = 14,
                         LongDescription = "Thick fabric hoodie. Consists mainly of cotton. Beautiful colour.",
                         ShortDescription = "Cotton thick hoodie.",

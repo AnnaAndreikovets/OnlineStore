@@ -20,7 +20,7 @@ app.UseMvc();
 
 app.UseMvc(routes => {
     routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
-    routes.MapRoute(name: "categoryFilter", template: "Good/{action}/{category?}", defaults: new {controller = "Good", action = "List"});
+    routes.MapRoute(name: "categoryFilter", template: "Good/{action}/", defaults: new {controller = "Good", action = "List"});
 });
 
 using(var scope = app.Services.CreateScope())
