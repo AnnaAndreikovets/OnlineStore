@@ -23,12 +23,7 @@ namespace OnlineStore.Controllers
             string? request = Request.Form["request"];
             string category = Request.Form["category"]!;
 
-            IEnumerable<Good> _allGoods = category == "All" ? allGoods.AllGoods : allGoods.AllGoods.Where(g => {
-                
-                Console.WriteLine(g.Category.Name);
-
-                return string.Equals(category, g.Category.Name);});
-Console.WriteLine(category + " " + _allGoods.Count());
+            IEnumerable<Good> _allGoods = category == "All" ? allGoods.AllGoods : allGoods.AllGoods.Where(g => string.Equals(category, g.Category.Name));
             IEnumerable<Good> Search()
             {
                 List<Tuple<Good, int>> result = new List<Tuple<Good, int>>();

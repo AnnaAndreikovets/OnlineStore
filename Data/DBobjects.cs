@@ -16,7 +16,7 @@ namespace OnlineStore.Data
                         new Category() { Id = Guid.NewGuid(), Name = "Toys"},
                         new Category() { Id = Guid.NewGuid(), Name = "Clothes"},
                         new Category() { Id = Guid.NewGuid(), Name = "Bags"},
-                        new Category() { Id = Guid.NewGuid(), Name = "hjgthfh"}
+                        new Category() { Id = Guid.NewGuid(), Name = "KitchenUtensils"}
                     };
 
                     categories = new Dictionary<string, Category>();
