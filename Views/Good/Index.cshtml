@@ -1,17 +1,16 @@
-@model Good
+@model GoodListViewModel
+
+@{
+    string availability = @Model.CurrentGood.Availible ? "Availible" : "Disavailible";
+}
 
 <div class="col-lg-4">
-    <img class="img-thumbnail" src="@Model.Image" alt="@Model.Name" />
-    <h2>@Model.Name</h2>
-    <p>Price: @Model.Price.ToString("c")</p>
-    <p>@Model.LongDescription</p>
-
-    @{
-        if(@Model.Availible)
-        {
-            <h1>Available and disavailble</h1>
-        }
-    }
+    <img class="img-thumbnail" src="@Model.CurrentGood.Image" alt="@Model.CurrentGood.Name" />
+    <h2>@Model.CurrentGood.Name</h2>
+    <p>Price: @Model.CurrentGood.Price.ToString("c")</p>
+    <p>@Model.CurrentGood.LongDescription</p>
+    @Html.Raw(availability)
     <p><a class="btn btn-warning" href="#">Buy</a></p>
-    <p><a class="btn btn-warning" href="#">Like/dislake</a></p>
+    
+    Like/Dislike
 </div>

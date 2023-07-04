@@ -20,8 +20,8 @@ namespace OnlineStore.Controllers
         [Route("Goods/List/")]
         public ViewResult List()
         {
-            string? request = Request?.Form["request"];
-            string category = Request?.Form["category"]!;
+            string? request = Request.Form["request"];
+            string category = Request.Form["category"]!;
 
             foreach(var i in allGoods.AllGoods) Console.WriteLine(i.Id);
 

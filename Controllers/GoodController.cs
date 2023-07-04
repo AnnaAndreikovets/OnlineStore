@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using OnlineStore.Data.Models;
 using OnlineStore.Data.Interfaces;
+using OnlineStore.ViewModels;
 
 namespace OnlineStore.Controllers
 {
@@ -16,9 +16,12 @@ namespace OnlineStore.Controllers
         [Route("Good/Index/{id}")]
         public IActionResult Index(Guid id)
         {
-            Good? obj = allGoods.GetGood(id);
+            GoodListViewModel obj = new GoodListViewModel() 
+            {
+                CurrentGood = allGoods.GetGood(id)
+            };
 
-            return obj is null ? Redirect("/") :  View(obj);
+            return obj.CurrentGood is null ? Redirect("/") :  View(obj);
         }
     }
 }
