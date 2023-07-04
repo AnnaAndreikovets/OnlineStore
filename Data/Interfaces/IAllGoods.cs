@@ -6,6 +6,6 @@ namespace OnlineStore.Data.Interfaces
     {
         IEnumerable<Good> AllGoods { get; }
         IEnumerable<Good> AllFavouriteGoods { get; }
-        Good GetGood (Guid id);
+        Good? GetGood (Guid id);
     }
 }

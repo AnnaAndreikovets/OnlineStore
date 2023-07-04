@@ -1,10 +1,12 @@
+@using System.Linq
+
 <h1>All goods</h1>
 <h2>@Model.CurrentCategory</h2>
 <div class="row mt-5 mb-2">
   @{
-    foreach(Good good in Model.AllGoods)
-    {
-      @Html.Partial("AllGoods", good);
-    }
+      foreach(Good good in Model.AllGoods)
+      {
+        @Html.Partial("AllGoods", good);
+      } 
   }
 </div>

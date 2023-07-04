@@ -1,0 +1,11 @@
+@model FavouriteGoodsListViewModel
+
+<h1>Basket</h1>
+<div class="row mt-5 mb-2">
+  @{
+    foreach(Good good in Model.AllFavouriteGoods)
+    {
+      @Html.Partial("AllGoods", good);
+    }
+  }
+</div>

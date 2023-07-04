@@ -18,9 +18,12 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseMvc();
 
+app.UseStatusCodePagesWithReExecute("/Home/Index", "?code={0}");
+
 app.UseMvc(routes => {
     routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
-    routes.MapRoute(name: "categoryFilter", template: "Good/{action}/", defaults: new {controller = "Good", action = "List"});
+    routes.MapRoute(name: "categoryFilter", template: "Goods/{action}/", defaults: new {controller = "Goods", action = "List"});
+    routes.MapRoute(name: "good", template: "Good/{action}/{id}", defaults: new {controller = "Good", action = "Index"});
 });
 
 using(var scope = app.Services.CreateScope())
@@ -33,7 +36,6 @@ using(var scope = app.Services.CreateScope())
 if(app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    app.UseStatusCodePages();
 }
 
 app.Run();

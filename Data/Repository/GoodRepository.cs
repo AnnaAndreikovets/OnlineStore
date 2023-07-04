@@ -18,7 +18,7 @@ namespace OnlineStore.Data.Repository
 
         public IEnumerable<Good> AllFavouriteGoods => DBContent.Good.Where(g => g.IsFavourite).Include(c => c.Category);
 
-        public Good GetGood(Guid id) => DBContent.Good.FirstOrDefault(g => g.Id == id);
+        public Good? GetGood(Guid id) => DBContent.Good.FirstOrDefault(g => g.Id.CompareTo(id) == 0);
 
     }
 }
