@@ -1,4 +1,3 @@
-using System;
 using OnlineStore.Data.Models;
 
 namespace OnlineStore.Data.Interfaces

@@ -1,4 +1,3 @@
-using System.Linq;
 using OnlineStore.Data.Interfaces;
 using OnlineStore.Data.Models;
 

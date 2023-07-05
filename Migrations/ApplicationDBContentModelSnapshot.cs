@@ -80,11 +80,9 @@ namespace OnlineStore.Migrations
 
             modelBuilder.Entity("OnlineStore.Data.Models.Order", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -116,27 +114,22 @@ namespace OnlineStore.Migrations
 
             modelBuilder.Entity("OnlineStore.Data.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("GoodId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("GoodId1")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("GoodId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<long>("Price")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GoodId1");
+                    b.HasIndex("GoodId");
 
                     b.HasIndex("OrderId");
 
@@ -158,7 +151,7 @@ namespace OnlineStore.Migrations
                 {
                     b.HasOne("OnlineStore.Data.Models.Good", "Good")
                         .WithMany()
-                        .HasForeignKey("GoodId1")
+                        .HasForeignKey("GoodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -10,11 +10,13 @@ namespace OnlineStore.Controllers
     {
         readonly IAllGoods allGoods;
         readonly ApplicationDBContent dBContent;
+        readonly IAllOrders allOrders;
 
-        public GoodController(IAllGoods allGoods, ApplicationDBContent dBContent)
+        public GoodController(IAllGoods allGoods, ApplicationDBContent dBContent, IAllOrders allOrders)
         {
             this.allGoods = allGoods;
             this.dBContent = dBContent;
+            this.allOrders = allOrders;
         }
 
         [Route("Good/Index/{id}")]
@@ -35,6 +37,29 @@ namespace OnlineStore.Controllers
         {
             Good good = allGoods.GetGood(id);
             return View(good);
+        }
+
+        [HttpPost]
+        [Route("Good/Checkout/{order}/{id}")]
+        public IActionResult Checkout(Order order, Guid id)
+        {
+            Good good = allGoods.GetGood(id);
+
+            if(ModelState.IsValid)
+            {
+                allOrders.CreateOrder(order, id);
+
+                return RedirectToAction("Complete");
+            }
+
+            return View(order);
+        }
+
+        public IActionResult Complete()
+        {
+            ViewBag.Message = "Order successfully processed";
+
+            return View();
         }
     }
 }

@@ -1,8 +1,8 @@
-@Model Order
+@model Order
 
 <div>
     <h3>Checkout</h3>
-    <form action="Order/Checkout" method="post" class="form-horizontal">
+    <form action="http://localhost:5166/Good/Checkout/@Model/@Model.Id." method="post" class="form-horizontal">
         <div class="form-group">
             <div class="col-md-5">
                 <label for="Name">Name:</label>
@@ -22,7 +22,7 @@
             </div>
             <div class="col-md-5">
                 <label for="Phone">Phone:</label>
-                <input type="text" placeholder="+1-234-567-8901" pattern="\+\d-\d{3}-\d{3}-\d{4}" id="Phone" name="Phone" />
+                <input type="text" required id="Phone" placeholder="+1-234-567-8901" pattern="\+\d-\d{3}-\d{3}-\d{4}" id="Phone" name="Phone" />
             </div>
             <div class="col-md-5">
                 <input class="btn btn-success" type="submit" value="Complete order" />
