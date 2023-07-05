@@ -23,8 +23,6 @@ namespace OnlineStore.Controllers
             string? request = Request.Form["request"];
             string category = Request.Form["category"]!;
 
-            foreach(var i in allGoods.AllGoods) Console.WriteLine(i.Id);
-
             IEnumerable<Good> _allGoods = category == "All" ? allGoods.AllGoods : allGoods.AllGoods.Where(g => string.Equals(category, g.Category.Name));
             IEnumerable<Good> Search()
             {

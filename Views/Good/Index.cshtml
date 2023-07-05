@@ -1,7 +1,17 @@
-@model GoodListViewModel
+@model GoodViewModel
 
 @{
     string availability = @Model.CurrentGood.Availible ? "Availible" : "Disavailible";
+    object favourite = ViewData["favourite"]!;
+
+    <script>
+    function Favourite(button)
+    {
+        button.value = button.value === "Like" ? "Dislike" : "Like";
+        @Model.LikeAndDislike();
+    }
+    </script>
+
 }
 
 <div class="col-lg-4">
@@ -10,7 +20,6 @@
     <p>Price: @Model.CurrentGood.Price.ToString("c")</p>
     <p>@Model.CurrentGood.LongDescription</p>
     @Html.Raw(availability)
-    <p><a class="btn btn-warning" href="#">Buy</a></p>
-    
-    Like/Dislike
+    Buy
+    <p><input id="myButton" class="btn btn-warning" type="submit" value="@Html.Raw(favourite)" onclick="Favourite(this)" /></p>
 </div>

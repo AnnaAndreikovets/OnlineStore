@@ -78,6 +78,71 @@ namespace OnlineStore.Migrations
                     b.ToTable("Good");
                 });
 
+            modelBuilder.Entity("OnlineStore.Data.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OrderTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("OnlineStore.Data.Models.OrderDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("GoodId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("GoodId1")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<long>("Price")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GoodId1");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderDetail");
+                });
+
             modelBuilder.Entity("OnlineStore.Data.Models.Good", b =>
                 {
                     b.HasOne("OnlineStore.Data.Models.Category", "Category")
@@ -89,9 +154,33 @@ namespace OnlineStore.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("OnlineStore.Data.Models.OrderDetail", b =>
+                {
+                    b.HasOne("OnlineStore.Data.Models.Good", "Good")
+                        .WithMany()
+                        .HasForeignKey("GoodId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OnlineStore.Data.Models.Order", "order")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Good");
+
+                    b.Navigation("order");
+                });
+
             modelBuilder.Entity("OnlineStore.Data.Models.Category", b =>
                 {
                     b.Navigation("Goods");
+                });
+
+            modelBuilder.Entity("OnlineStore.Data.Models.Order", b =>
+                {
+                    b.Navigation("OrderDetails");
                 });
 #pragma warning restore 612, 618
         }
