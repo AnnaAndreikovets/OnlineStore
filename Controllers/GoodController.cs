@@ -38,20 +38,17 @@ namespace OnlineStore.Controllers
         }
 
         [Route("Good/Checkout/{id}")]
-        public IActionResult Checkout(Guid id)
+        public IActionResult Checkout()
         {
-            Good good = allGoods.GetGood(id)!;
-
-            return View(good);
+            //Good good = allGoods.GetGood(id)!;
+            return View();
         }
 
         [HttpPost]
         [Route("Good/Checkout2/{id}")]
         [ActionName("Checkout")]
-        public IActionResult Checkout2(Guid id)
+        public IActionResult Checkout2()
         {
-            Good good = allGoods.GetGood(id)!;
-
             Order order = new Order()
             {
                 Name = Request.Form["Name"]!,
@@ -59,8 +56,7 @@ namespace OnlineStore.Controllers
                 Address = Request.Form["Address"]!,
                 Email = Request.Form["Email"]!,
                 Phone = Request.Form["Phone"]!,
-                OrderTime = DateTime.Now,
-                //Item = Request.Form["Phone"]!
+                OrderTime = DateTime.Now
             };
 
             allOrders.CreateOrder(order);

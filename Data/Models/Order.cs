@@ -7,8 +7,6 @@ namespace OnlineStore.Data.Models
     {
         [BindNever]
         public int Id { get; set; }
-        //[BindRequired]
-        ///public string Item { get; set; } = null!;
         [BindRequired]
         public string Name { get; set; } = null!;
         [BindRequired]
