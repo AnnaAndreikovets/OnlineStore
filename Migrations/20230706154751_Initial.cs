@@ -24,6 +24,24 @@ namespace OnlineStore.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Order",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OrderTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Order", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Good",
                 columns: table => new
                 {
@@ -59,6 +77,9 @@ namespace OnlineStore.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Good");
+
+            migrationBuilder.DropTable(
+                name: "Order");
 
             migrationBuilder.DropTable(
                 name: "Category");

@@ -80,9 +80,11 @@ namespace OnlineStore.Migrations
 
             modelBuilder.Entity("OnlineStore.Data.Models.Order", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -112,30 +114,6 @@ namespace OnlineStore.Migrations
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("OnlineStore.Data.Models.OrderDetail", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("GoodId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<long>("Price")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GoodId");
-
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("OrderDetail");
-                });
-
             modelBuilder.Entity("OnlineStore.Data.Models.Good", b =>
                 {
                     b.HasOne("OnlineStore.Data.Models.Category", "Category")
@@ -147,33 +125,9 @@ namespace OnlineStore.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("OnlineStore.Data.Models.OrderDetail", b =>
-                {
-                    b.HasOne("OnlineStore.Data.Models.Good", "Good")
-                        .WithMany()
-                        .HasForeignKey("GoodId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("OnlineStore.Data.Models.Order", "order")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Good");
-
-                    b.Navigation("order");
-                });
-
             modelBuilder.Entity("OnlineStore.Data.Models.Category", b =>
                 {
                     b.Navigation("Goods");
-                });
-
-            modelBuilder.Entity("OnlineStore.Data.Models.Order", b =>
-                {
-                    b.Navigation("OrderDetails");
                 });
 #pragma warning restore 612, 618
         }

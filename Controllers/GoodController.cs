@@ -36,28 +36,37 @@ namespace OnlineStore.Controllers
         public IActionResult Checkout(Guid id)
         {
             Good good = allGoods.GetGood(id);
+
             return View(good);
         }
 
         [HttpPost]
-        [Route("Good/Checkout/{order}/{id}")]
-        public IActionResult Checkout(Order order, Guid id)
+        [Route("Good/Checkout2/{id}")]
+        [ActionName("Checkout")]
+        public IActionResult Checkout2(Guid id)
         {
             Good good = allGoods.GetGood(id);
 
-            if(ModelState.IsValid)
+            Order order = new Order()
             {
-                allOrders.CreateOrder(order, id);
+                Name = Request.Form["Name"]!,
+                Surname = Request.Form["Surname"]!,
+                Address = Request.Form["Address"]!,
+                Email = Request.Form["Email"]!,
+                Phone = Request.Form["Phone"]!,
+                OrderTime = DateTime.Now,
+                //Item = Request.Form["Phone"]!
+            };
 
-                return RedirectToAction("Complete");
-            }
+            allOrders.CreateOrder(order);
 
-            return View(order);
+            return RedirectToAction("Complete");
         }
 
+        [Route("Good/Complete")]
         public IActionResult Complete()
         {
-            ViewBag.Message = "Order successfully processed";
+            ViewData["Message"] = "Order successfully processed";
 
             return View();
         }

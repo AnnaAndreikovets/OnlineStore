@@ -1,14 +1,15 @@
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace OnlineStore.Data.Models
 {
     public class Order
     {
+        [BindNever]
+        public int Id { get; set; }
+        //[BindRequired]
+        ///public string Item { get; set; } = null!;
         [BindRequired]
-        public Guid Id { get; set; }
-        [BindRequired]
-        [Display(Name = "Enter your name")]
         public string Name { get; set; } = null!;
         [BindRequired]
         public string Surname { get; set; } = null!;
@@ -24,6 +25,5 @@ namespace OnlineStore.Data.Models
         [BindNever]
         [ScaffoldColumn(false)]
         public DateTime OrderTime { get; set; }
-        public List<OrderDetail> OrderDetails { get; set; }
     }
 }

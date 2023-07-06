@@ -13,22 +13,9 @@ namespace OnlineStore.Data.Repository
             this.dbContent = dBContent;
             this.allGoods = allGoods;
         }
-        public void CreateOrder(Order order, Guid goodId)
-        {
-            order.OrderTime = DateTime.Now;
+        public void CreateOrder(Order order)
+        {   
             dbContent.Order.Add(order);
-
-            Good good = allGoods.GetGood(goodId);
-
-            OrderDetail orderDetail = new OrderDetail()
-            {
-                Id = Guid.NewGuid(),
-                OrderId = order.Id,
-                GoodId = good.Id,
-                Price = good.Price
-            };
-
-            dbContent.OrderDetail.Add(orderDetail);
 
             dbContent.SaveChanges();
         }

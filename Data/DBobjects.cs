@@ -159,7 +159,6 @@ namespace OnlineStore.Data
                         ShortDescription = "Ceramic teapot in the form of a lemon.",
                         Image = "/img/teapot.jpg",
                         Availible = true,
-                        IsFavourite = true,
                         CategoryId = Categories["KitchenUtensils"].Id,
                         Category = Categories["KitchenUtensils"]
                     },
@@ -172,7 +171,6 @@ namespace OnlineStore.Data
                         ShortDescription = "Cotton thick hoodie.",
                         Image = "/img/yellow hoodie_.jpg",
                         Availible = true,
-                        IsFavourite = true,
                         CategoryId = Categories["Clothes"].Id,
                         Category = Categories["Clothes"]
                     },
@@ -185,7 +183,6 @@ namespace OnlineStore.Data
                         ShortDescription = "Mug with black eye design.",
                         Image = "/img/yellow mug.jpg",
                         Availible = true,
-                        IsFavourite = true,
                         CategoryId = Categories["KitchenUtensils"].Id,
                         Category = Categories["KitchenUtensils"]
                     },

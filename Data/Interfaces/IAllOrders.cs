@@ -4,6 +4,6 @@ namespace OnlineStore.Data.Interfaces
 {
     public interface IAllOrders
     {
-        void CreateOrder(Order order, Guid goodId);
+        void CreateOrder(Order order);
     }
 }

@@ -1,1 +1,5 @@
-<h3>ViewBag.Message</h3>
+@{
+    object message = ViewData["Message"];
+}
+
+<h3>@message</h3>
