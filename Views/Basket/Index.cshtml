@@ -3,6 +3,11 @@
 <h1>Basket</h1>
 <div class="row mt-5 mb-2">
   @{
+    if(@Model.AllFavouriteGoods.Count() == 0)
+    {
+      <h3>There are no favorite items in the basket</h3>
+    }
+
     foreach(Good good in Model.AllFavouriteGoods)
     {
       @Html.Partial("AllGoods", good);

@@ -1,7 +1,6 @@
 @model GoodViewModel
 
 @{
-    string availability = @Model.CurrentGood.Availible ? "Availible" : "Disavailible";
     object favourite = ViewData["favourite"]!;
 
     <script>
@@ -15,14 +14,17 @@
 }
 
 <div class="col-lg-4">
-    <img class="img-thumbnail" src="@Model.CurrentGood.Image" alt="@Model.CurrentGood.Name" />
+    <img class="img-thumbnail" src="@Model!.CurrentGood!.Image" alt="@Model!.CurrentGood!.Name" />
     <h2>@Model.CurrentGood.Name</h2>
     <p>Price: @Model.CurrentGood.Price.ToString("c")</p>
     <p>@Model.CurrentGood.LongDescription</p>
     
-    <form action="http://localhost:5166/Good/Checkout/%7B539cd073-c1ce-4189-b414-1d020af51a35%7D?" method="post">
-        <p><input id="buyButton" class="btn btn-warning" type="submit" value="Buy" /></p>
-    </form>
-
     <p><input id="likeButton" class="btn btn-warning" type="submit" value="@Html.Raw(favourite)" onclick="Favourite(this)" /></p>
+
+    @if(@Model.CurrentGood.Availible)
+    {
+        <form action="http://localhost:5166/Good/Checkout/%7B539cd073-c1ce-4189-b414-1d020af51a35%7D?" method="post">
+            <p><input id="buyButton" class="btn btn-warning" type="submit" value="Buy" /></p>
+        </form>
+    }
 </div>

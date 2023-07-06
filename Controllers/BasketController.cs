@@ -12,6 +12,8 @@ namespace OnlineStore.Controllers
             this.allGoods = allGoods;
         }
 
+        [Route("Basket/")]
+        [Route("Basket/Index")]
         public IActionResult Index()
         {
             FavouriteGoodsListViewModel obj = new FavouriteGoodsListViewModel()

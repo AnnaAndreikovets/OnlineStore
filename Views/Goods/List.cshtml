@@ -1,12 +1,15 @@
-@using System.Linq
+@model GoodsListViewModel
 
-<h1>All goods</h1>
 <h2>@Model.CurrentCategory</h2>
 <div class="row mt-5 mb-2">
   @{
-      foreach(Good good in Model.AllGoods)
-      {
+    if(@Model.AllGoods.Count() == 0)
+    {
+      <h3>Good not found</h3>
+    }
+    foreach(Good good in Model.AllGoods)
+    {
         @Html.Partial("AllGoods", good);
-      } 
+    } 
   }
 </div>

@@ -13,9 +13,13 @@ namespace OnlineStore.ViewModels
             this.dBContent = dBContent;
         }
 
-        public object LikeAndDislike()
+        public object? LikeAndDislike()
         {
-            CurrentGood.IsFavourite = !CurrentGood.IsFavourite;
+            if(CurrentGood is not null)
+            {
+                CurrentGood.IsFavourite = !CurrentGood.IsFavourite;
+            }
+            
             dBContent.SaveChanges();
 
             return null;

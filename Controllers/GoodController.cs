@@ -27,15 +27,20 @@ namespace OnlineStore.Controllers
                 CurrentGood = allGoods.GetGood(id)
             };
 
-            ViewData["favourite"] = obj.CurrentGood.IsFavourite ? "Dislike" : "Like";
+            if(obj.CurrentGood is not null)
+            {
+                ViewData["favourite"] = obj.CurrentGood.IsFavourite ? "Dislike" : "Like";
 
-            return obj.CurrentGood is null ? Redirect("/") :  View(obj);
+                return View(obj);
+            }
+
+            return Redirect("/");
         }
 
         [Route("Good/Checkout/{id}")]
         public IActionResult Checkout(Guid id)
         {
-            Good good = allGoods.GetGood(id);
+            Good good = allGoods.GetGood(id)!;
 
             return View(good);
         }
@@ -45,7 +50,7 @@ namespace OnlineStore.Controllers
         [ActionName("Checkout")]
         public IActionResult Checkout2(Guid id)
         {
-            Good good = allGoods.GetGood(id);
+            Good good = allGoods.GetGood(id)!;
 
             Order order = new Order()
             {
