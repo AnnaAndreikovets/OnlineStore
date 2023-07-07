@@ -14,11 +14,10 @@
 }
 
 <div class="col-lg-4">
+    <h1>@Model.CurrentGood.Name</h1>
     <img class="img-thumbnail" src="@Model!.CurrentGood!.Image" alt="@Model!.CurrentGood!.Name" />
-    <h2>@Model.CurrentGood.Name</h2>
-    <p>Price: @Model.CurrentGood.Price.ToString("c")</p>
     <p>@Model.CurrentGood.LongDescription</p>
-    
+    <p>Price: @Model.CurrentGood.Price.ToString("c")</p>
     <p><input id="likeButton" class="btn btn-warning" type="submit" value="@Html.Raw(favourite)" onclick="Favourite(this)" /></p>
 
     @if(@Model.CurrentGood.Availible)

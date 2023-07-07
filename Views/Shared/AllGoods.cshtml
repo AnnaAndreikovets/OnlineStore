@@ -1,9 +1,20 @@
 @model Good
 
-<div class="col-lg-4">
-    <img class="img-thumbnail" src="@Model.Image" alt="@Model.Name" />
-    <h2>@Model.Name</h2>
-    <p>Price: @Model.Price.ToString("c")</p>
-    <p>Description: @Model.ShortDescription</p>
-    <p><a class="btn btn-warning" href="/Good/Index/@Model.Id">More</a></p>
+@{
+    string state = @Model.IsFavourite ? "Like" : "Dislike";
+}
+
+<div class="col-md-4">
+    <div class="card mb-4 box-shadow">
+        <img class="img-thumbnail" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="@Model.Name" src="@Model.Image" data-holder-rendered="true">
+            <div class="card-body">
+                <h2>@Model.Name</h2>
+                <p>Price: @Model.Price.ToString("c")</p>
+                <p>@Model.ShortDescription</p>
+                <div class="d-flex justify-content-between align-items-center">
+                <p><a class="btn btn-warning" href="/Good/Index/@Model.Id">More</a></p>
+                <small class="text-muted">@state</small>
+            </div>
+        </div>
+    </div>
 </div>

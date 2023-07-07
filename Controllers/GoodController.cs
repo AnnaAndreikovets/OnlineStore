@@ -38,14 +38,14 @@ namespace OnlineStore.Controllers
         }
 
         [Route("Good/Checkout/{id}")]
-        public IActionResult Checkout()
+        public IActionResult Checkout(Guid id)
         {
             //Good good = allGoods.GetGood(id)!;
             return View();
         }
 
         [HttpPost]
-        [Route("Good/Checkout2/{id}")]
+        [Route("Good/Checkout2")]
         [ActionName("Checkout")]
         public IActionResult Checkout2()
         {
