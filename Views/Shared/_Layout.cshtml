@@ -22,14 +22,15 @@
               <a class="nav-link disabled" href="/Basket/Index">Basket</a>
             </li>
           </ul>
+
           <form class="form-inline mt-2 mt-md-0" method="post" action="http://localhost:5166/Goods/List">
-            <label for="fruits">Category:</label>
-            <select id="category" name="category">
-              <option value="All">All</option>
-              <option value="Bags">Bags</option>
-              <option value="Clothes">Clothes</option>
-              <option value="Toys">Toys</option>
-              <option value="KitchenUtensils">Kitchen utensils</option>
+            <label class="text-white" for="fruits">Category: </label>
+            <select class="text-dark" id="category" name="category" style="margin-left: 7px; margin-right: 20px;">
+              <option class="text-dark" value="All">All</option>
+              <option class="text-dark" value="Bags">Bags</option>
+              <option class="text-dark" value="Clothes">Clothes</option>
+              <option class="text-dark" value="Toys">Toys</option>
+              <option class="text-dark" value="KitchenUtensils">Kitchen utensils</option>
             </select>
             <input class="form-control mr-sm-2" type="text" name="request" placeholder="Search" aria-label="Search">
             <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search"/>
@@ -43,7 +44,7 @@
     </div>
     
     <hr>
-  
+
     <footer class="container">
       <p class="float-right"><a href="#">Back to top</a></p>
       <p>© 2023 All rights reserved</p>
