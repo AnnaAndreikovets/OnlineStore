@@ -17,6 +17,7 @@ builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
 var app = builder.Build();
 
 app.UseStaticFiles();
+app.UseExceptionHandler("/Error");
 app.UseMvc();
 
 app.UseStatusCodePagesWithReExecute("/Home/Index", "?code={0}");
@@ -34,9 +35,13 @@ using(var scope = app.Services.CreateScope())
     DBobjects.Initial(content);
 }
 
-if(app.Environment.IsDevelopment())
+app.Map("/Error", (HttpContext context) => 
 {
-    app.UseDeveloperExceptionPage();
-}
+    string message = "<h3>There has been a breakdown!</h3>";
+
+    context.Response.ContentType = "text/html";
+
+    return message;
+});
 
 app.Run();
