@@ -22,7 +22,7 @@ namespace OnlineStore.Controllers
         [Route("Good/Index/{id}")]
         public IActionResult Index(Guid id)
         {
-            GoodViewModel obj = new GoodViewModel(dBContent) 
+            GoodViewModel obj = new GoodViewModel()
             {
                 CurrentGood = allGoods.GetGood(id)
             };
@@ -35,6 +35,25 @@ namespace OnlineStore.Controllers
             }
 
             return Redirect("/");
+        }
+
+        [HttpPost]
+        public ActionResult LikeAndDislike()
+        {
+            Guid id = Guid.Parse(Request.Form["id"]);
+            Good? good = dBContent.Good.Find(id);
+
+            if(good is not null)
+            {
+                good.IsFavourite = !good.IsFavourite;
+                dBContent.SaveChanges();
+
+                return Content("success");
+            }
+            else
+            {
+                return Content("failed");
+            }
         }
 
         [Route("Good/Checkout/{id}")]

@@ -7,22 +7,31 @@
     function Favourite(button)
     {
         button.value = button.value === "Like" ? "Dislike" : "Like";
-        @Model.LikeAndDislike();
     }
-    </script>
-
+    
+    function handleSubmit(event)
+    {
+        event.preventDefault();
+        
+        var formData = new FormData(event.target);
+        
+        fetch('/Good/LikeAndDislike', { method: 'POST', body: formData });
+    }
+</script>
 }
 
 <div class="col-lg-4">
-    <h1>@Model.CurrentGood.Name</h1>
+    <h1>@Model!.CurrentGood!.Name</h1>
     <img class="img-thumbnail" src="@Model!.CurrentGood!.Image" alt="@Model!.CurrentGood!.Name" />
     <p>@Model.CurrentGood.LongDescription</p>
     <p>Price: @Model.CurrentGood.Price.ToString("c")</p>
-    <p><input id="likeButton" class="btn btn-warning" type="submit" value="@Html.Raw(favourite)" onclick="Favourite(this)" /></p>
-
+    <form action="http://localhost:5166/Good/LikeAndDislike/" method="post" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="id" value="@Model.CurrentGood.Id" />
+        <p><input id="likeButton" class="btn btn-warning" type="submit" value="@favourite" onclick="Favourite(this)" /></p>
+    </form>
     @if(@Model.CurrentGood.Availible)
     {
-        <form action="http://localhost:5166/Good/Checkout/%7B539cd073-c1ce-4189-b414-1d020af51a35%7D?" method="post">
+        <form action="http://localhost:5166/Good/Checkout/{@Model.CurrentGood.Id}" method="post">
             <p><input id="buyButton" class="btn btn-warning" type="submit" value="Buy" /></p>
         </form>
     }
