@@ -40,7 +40,7 @@ namespace OnlineStore.Controllers
         [HttpPost]
         public ActionResult LikeAndDislike()
         {
-            Guid id = Guid.Parse(Request.Form["id"]);
+            Guid? id = Guid.Parse(Request?.Form["id"]!);
             Good? good = dBContent.Good.Find(id);
 
             if(good is not null)

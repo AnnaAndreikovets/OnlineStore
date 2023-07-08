@@ -11,7 +11,6 @@ builder.Services.AddTransient<IAllGoods, GoodRepository>();
 builder.Services.AddTransient<IGoodsCategory, CategoryRepository>();
 builder.Services.AddTransient<IAllOrders, OrdersRepository>();
 
-
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
 
 var app = builder.Build();
